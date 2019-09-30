@@ -144,7 +144,7 @@ public class USBGpsProviderService extends Service implements USBGpsManager.Nmea
                     @Override
                     public void run() {
                         if (BuildConfig.DEBUG) Log.d(LOG_TAG, "Boot start");
-                        context.startService(
+                        context.startForegroundService(
                                 new Intent(context, USBGpsProviderService.class)
                                         .setAction(ACTION_START_GPS_PROVIDER)
                         );
@@ -422,7 +422,7 @@ public class USBGpsProviderService extends Service implements USBGpsManager.Nmea
 
     @Override
     public void onLocationChanged(Location location) {
-
+        
     }
 
     @Override
